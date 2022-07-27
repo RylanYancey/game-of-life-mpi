@@ -6,7 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jul 26 10:10:49 2022
+ 
+# Make data base, printed on Wed Jul 27 10:08:02 2022
 
 # Variables
 
@@ -23,7 +24,7 @@ KONSOLE_DBUS_SERVICE = :1.48
 # environment
 VSCODE_CWD = /home/ryancey/projects/game_of_life
 # environment
-WINDOWID = 67108871
+WINDOWID = 65011719
 # environment
 MODULES_CMD = /usr/lib/x86_64-linux-gnu/modulecmd.tcl
 # default
@@ -81,7 +82,7 @@ PAM_KWALLET5_LOGIN = /run/user/926/kwallet5.socket
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-XXXXXXQQaaoO/agent.1299
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXL4dau6/agent.1097
 # default
 .SHELLFLAGS := -c
 # environment
@@ -97,7 +98,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3339
+VSCODE_PID = 1993
 # environment
 LMOD_COLORIZE = yes
 # environment
@@ -105,7 +106,7 @@ XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/lusk:@/tmp/.ICE-unix/1557,unix/lusk:/tmp/.ICE-unix/1557
+SESSION_MANAGER = local/lusk:@/tmp/.ICE-unix/1344,unix/lusk:/tmp/.ICE-unix/1344
 # automatic
 *F = $(notdir $*)
 # environment
@@ -127,7 +128,7 @@ SHELL = /bin/sh
 # default
 MAKECMDGOALS := all
 # makefile (from 'Makefile', line 71)
-objects := bin/main.o bin/sector.o
+objects := bin/main.o
 # environment
 SHLVL = 1
 # environment
@@ -183,7 +184,7 @@ XDG_VTNR = 1
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 1261
+SYSTEMD_EXEC_PID = 1062
 # environment
 MODULEPATH_ROOT = /usr/modulefiles
 # environment
@@ -197,7 +198,7 @@ KDE_SESSION_UID = 926
 # environment
 KONSOLE_DBUS_SESSION = /Sessions/1
 # environment
-SSH_AGENT_PID = 1434
+SSH_AGENT_PID = 1232
 # environment
 LMOD_arch = x86_64
 # environment
@@ -245,7 +246,7 @@ VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
-SHELL_SESSION_ID = 3b993abbdeab4df09beafe5060ce053a
+SHELL_SESSION_ID = 02c987bf73e24602bb352547d0298d6f
 # environment
 KDE_SESSION_VERSION = 5
 # default
@@ -263,10 +264,10 @@ KDE_FULL_SESSION = true
 
 # Directories
 
-# . (device 63, inode 211988016): 8 files, no impossibilities.
-# source (device 63, inode 211988204): 4 files, no impossibilities.
+# . (device 60, inode 211988016): 10 files, no impossibilities.
+# source (device 60, inode 211988204): 3 files, no impossibilities.
 
-# 12 files, no impossibilities in 2 directories.
+# 13 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -281,7 +282,7 @@ bin/%.o: source/%.cpp
 bin/main.o: source/main.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-07-26 09:58:22.313100412
+#  Last modified 2022-07-27 09:25:54.465188813
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -298,11 +299,11 @@ bin/main.o: source/main.cpp
 # ^ := source/main.cpp
 # automatic
 # ? := source/main.cpp
+ 
 # automatic
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=3/14=21%
- 
 #  recipe to execute (from 'Makefile', line 93):
 	$(CC) $(CFLAGS) $?
 	mv *.o bin
@@ -313,12 +314,6 @@ Makefile:
 #  Last modified 2022-07-26 09:54:54.585426
 #  File has been updated.
 #  Successfully updated.
-
-# Not a target:
-bin/sector.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
@@ -334,7 +329,7 @@ clean:
 #  Modification time never checked.
 #  File has not been updated.
 
-all: bin/main.o bin/sector.o
+all: bin/main.o
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -353,24 +348,24 @@ all: bin/main.o bin/sector.o
 # Not a target:
 source/main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-26 10:08:12.470172
+#  Last modified 2022-07-27 10:01:15.774378
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=9/1024=1%, Rehash=0, Collisions=0/27=0%
+# Load=8/1024=1%, Rehash=0, Collisions=0/25=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 23 / storage = 198 B / avg = 8 B
-# current buf: size = 8162 B / used = 198 B / count = 23 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 23 / storage = 187 B / avg = 8 B
+# current buf: size = 8162 B / used = 187 B / count = 23 / avg = 8 B
 
 # strcache performance: lookups = 36 / hit rate = 36%
 # hash-table stats:
 # Load=23/8192=0%, Rehash=0, Collisions=0/36=0%
-# Finished Make data base on Tue Jul 26 10:10:49 2022
+# Finished Make data base on Wed Jul 27 10:08:02 2022
 
  

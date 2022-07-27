@@ -2,8 +2,6 @@ make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/ryancey/projects/game_of_life'
 mpiCC -c -I./header source/main.cpp
 mv *.o bin
-mpiCC -c -I./header source/sector.cpp
-mv *.o bin
-mpiCC -o run bin/main.o bin/sector.o 
+mpiCC -o run bin/main.o 
 make: Leaving directory '/home/ryancey/projects/game_of_life'
  
