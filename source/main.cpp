@@ -125,8 +125,8 @@ int main(int argc, char* argv[]) {
         if (col != 0) {
             MPI_Request send;
             MPI_Request recv;
-            MPI_Send_init(&data[data_width + 2], field_width, HORI_TYPE, rank - 1, 0, MPI_COMM_WORLD, &send);
-            MPI_Recv_init(&data[data_width + 1], field_width, HORI_TYPE, rank - 1, 0, MPI_COMM_WORLD, &recv);
+            MPI_Send_init(&data[data_width + 2], 1, HORI_TYPE, rank - 1, 0, MPI_COMM_WORLD, &send);
+            MPI_Recv_init(&data[data_width + 1], 1, HORI_TYPE, rank - 1, 0, MPI_COMM_WORLD, &recv);
             hori_reqs[a] = send;
             hori_reqs[a + 1] = recv;
             a += 2;
@@ -136,8 +136,8 @@ int main(int argc, char* argv[]) {
         if (col != world_width - 1) {
             MPI_Request send;
             MPI_Request recv;
-            MPI_Send_init(&data[(data_width * 2) - 2], field_width, HORI_TYPE, rank + 1, 0, MPI_COMM_WORLD, &send);
-            MPI_Recv_init(&data[(data_width * 2) - 1], field_width, HORI_TYPE, rank + 1, 0, MPI_COMM_WORLD, &recv);
+            MPI_Send_init(&data[(data_width * 2) - 2], 1, HORI_TYPE, rank + 1, 0, MPI_COMM_WORLD, &send);
+            MPI_Recv_init(&data[(data_width * 2) - 1], 1, HORI_TYPE, rank + 1, 0, MPI_COMM_WORLD, &recv);
             hori_reqs[a] = send;
             hori_reqs[a + 1] = recv;
         }
@@ -152,8 +152,8 @@ int main(int argc, char* argv[]) {
         if (row != 0) {
             MPI_Request send;
             MPI_Request recv;
-            MPI_Send_init(&data[data_width], data_width, VERT_TYPE, rank - world_width, 0, MPI_COMM_WORLD, &send);
-            MPI_Recv_init(&data[0], data_width, VERT_TYPE, rank - world_width, 0, MPI_COMM_WORLD, &recv);
+            MPI_Send_init(&data[data_width], 1, VERT_TYPE, rank - world_width, 0, MPI_COMM_WORLD, &send);
+            MPI_Recv_init(&data[0], 1, VERT_TYPE, rank - world_width, 0, MPI_COMM_WORLD, &recv);
             vert_reqs[a] = send;
             vert_reqs[a + 1] = recv;
             a += 2;
@@ -163,8 +163,8 @@ int main(int argc, char* argv[]) {
         if (row != world_width - 1) {
             MPI_Request send;
             MPI_Request recv;
-            MPI_Send_init(&data[data_width * (data_width - 2)], data_width, VERT_TYPE, rank + world_width, 0, MPI_COMM_WORLD, &send);
-            MPI_Recv_init(&data[data_width * (data_width - 1)], data_width, VERT_TYPE, rank + world_width, 0, MPI_COMM_WORLD, &recv);
+            MPI_Send_init(&data[data_width * (data_width - 2)], 1, VERT_TYPE, rank + world_width, 0, MPI_COMM_WORLD, &send);
+            MPI_Recv_init(&data[data_width * (data_width - 1)], 1, VERT_TYPE, rank + world_width, 0, MPI_COMM_WORLD, &recv);
             vert_reqs[a] = send;
             vert_reqs[a + 1] = recv;
         }
@@ -187,28 +187,6 @@ int main(int argc, char* argv[]) {
                 if (neighbours == 3) alive = 1;
                 if (neighbours != 2) data[x + field_width * y] = alive;  
             }
-
-        if (rank == 0) {
-            buffer[0] = data;
-            for (int i = 1; i < size; i++) {
-                cout << "BEFORE RECEIVED" << endl;
-                MPI_Recv(&buffer[i], m, MPI_BYTE, i, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-                cout << "RECEIVED" << endl;
-            }
-
-            for (int x = 0; x < world_width; x++)
-                for (int i = 0; i < sector_width + 1; i++) {
-                    cout << endl;
-                    for (int y = 0; y < world_width; y++) 
-                        for (int k = 0; k < sector_width + 1; k++) 
-                            if (buffer[x + world_width * y][i + sector_width * k])
-                                cout << 0xE2;
-                            else
-                                cout << "  " << endl;
-                }  
-        }
-        else 
-            MPI_Send(&data, (sector_width + 1) * (sector_width + 1), MPI_BYTE, 0, 0, MPI_COMM_WORLD);
 
         for (int i = 0; i < verts; i++)
             MPI_Request_free(&vert_reqs[i]);

@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 28 10:25:59 2022
+# Make data base, printed on Fri Jul 29 10:22:11 2022
 
 # Variables
 
@@ -14,6 +14,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 GDK_BACKEND = x11
 # environment
 LC_ALL = C
+ 
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/ryancey/.gtkrc:/home/ryancey/.config/gtkrc
 # environment
@@ -23,7 +24,7 @@ KONSOLE_DBUS_SERVICE = :1.48
 # environment
 VSCODE_CWD = /home/ryancey/projects/game_of_life
 # environment
-WINDOWID = 62914567
+WINDOWID = 67108871
 # environment
 MODULES_CMD = /usr/lib/x86_64-linux-gnu/modulecmd.tcl
 # default
@@ -53,12 +54,11 @@ KONSOLE_DBUS_WINDOW = /Windows/1
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
- 
 %F = $(notdir $%)
 # environment
 VSCODE_CODE_CACHE_PATH = /home/ryancey/.config/Code/CachedData/92d25e35d9bf1a6b16f7d0758f25d48ace11e5b9
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session2
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
 LANG = C
 # environment
@@ -82,7 +82,7 @@ PAM_KWALLET5_LOGIN = /run/user/926/kwallet5.socket
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-XXXXXXf4AAX6/agent.1134
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXpXSHXR/agent.1107
 # default
 .SHELLFLAGS := -c
 # environment
@@ -98,7 +98,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3025
+VSCODE_PID = 2050
 # environment
 LMOD_COLORIZE = yes
 # environment
@@ -106,7 +106,7 @@ XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/lusk:@/tmp/.ICE-unix/1382,unix/lusk:/tmp/.ICE-unix/1382
+SESSION_MANAGER = local/lusk:@/tmp/.ICE-unix/1362,unix/lusk:/tmp/.ICE-unix/1362
 # automatic
 *F = $(notdir $*)
 # environment
@@ -184,7 +184,7 @@ XDG_VTNR = 1
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 1095
+SYSTEMD_EXEC_PID = 1071
 # environment
 MODULEPATH_ROOT = /usr/modulefiles
 # environment
@@ -198,7 +198,7 @@ KDE_SESSION_UID = 926
 # environment
 KONSOLE_DBUS_SESSION = /Sessions/1
 # environment
-SSH_AGENT_PID = 1270
+SSH_AGENT_PID = 1242
 # environment
 LMOD_arch = x86_64
 # environment
@@ -246,7 +246,7 @@ VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
-SHELL_SESSION_ID = 694672fc919643ee8292b2a9234094fb
+SHELL_SESSION_ID = e5519fa6f4a4422685b3469e4e411800
 # environment
 KDE_SESSION_VERSION = 5
 # default
@@ -282,7 +282,7 @@ bin/%.o: source/%.cpp
 bin/main.o: source/main.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-07-27 11:32:47.371352456
+#  Last modified 2022-07-28 15:52:33.189431374
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -306,6 +306,7 @@ bin/main.o: source/main.cpp
 #  recipe to execute (from 'Makefile', line 93):
 	$(CC) $(CFLAGS) $?
 	mv *.o bin
+ 
 
 # Not a target:
 Makefile:
@@ -347,7 +348,7 @@ all: bin/main.o
 # Not a target:
 source/main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-27 14:48:37.383326
+#  Last modified 2022-07-28 15:52:46.213126
 #  File has been updated.
 #  Successfully updated.
 
@@ -360,12 +361,11 @@ source/main.cpp:
 # No general ('VPATH' variable) search path.
 
 # strcache buffers: 1 (0) / strings = 24 / storage = 191 B / avg = 7 B
- 
 # current buf: size = 8162 B / used = 191 B / count = 24 / avg = 7 B
 
 # strcache performance: lookups = 37 / hit rate = 35%
 # hash-table stats:
 # Load=24/8192=0%, Rehash=0, Collisions=0/37=0%
-# Finished Make data base on Thu Jul 28 10:25:59 2022
+# Finished Make data base on Fri Jul 29 10:22:11 2022
 
  
